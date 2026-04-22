@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #FAF7F2;
+  color: #2C1810;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --cream: #FAF7F2;
+  --blush: #F2D7D5;
+  --rose: #C9847A;
+  --dusty: #9B7B79;
+  --ink: #2C1810;
+  --warm: #E8DDD5;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 0; }
+
+/* Progress dots */
+.progress-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--warm);
+  transition: all 0.4s ease;
+}
+.progress-dot.active {
+  background-color: var(--rose);
+  transform: scale(1.3);
+}
+
+/* Gift box styles */
+.gift-box {
+  aspect-ratio: 1;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-box-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F5E6E3 0%, #EDD5D2 100%);
+  border: 1px solid rgba(201, 132, 122, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.gift-box-inner:hover {
+  border-color: rgba(201, 132, 122, 0.5);
+  transform: scale(1.02);
+}
