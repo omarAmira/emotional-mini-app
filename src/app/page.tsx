@@ -180,7 +180,7 @@ function Screen1({ onYes }: { onYes: () => void }) {
           variants={fadeUp}
           custom={1}
         >
-          Hiba<br />do you <br />love me ?
+          ROUA<br />do you <br />love me ?
         </motion.h1>
         <motion.div
           className="w-12 h-px bg-rose/50 mx-auto mt-4"
